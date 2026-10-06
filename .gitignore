@@ -1,0 +1,64 @@
+# JavaScript dependencies and generated builds
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# Python environments, bytecode, and tool caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.nox/
+
+# Local configuration and secrets; keep setup templates
+.env*
+!.env.example
+!.env.*.example
+
+# Local databases and uploaded documents
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+uploads/
+
+# Test reports, coverage, and generated walkthrough artifacts
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+.nyc_output/
+playwright-report/
+test-results/
+/output/
+
+# Logs and temporary files
+*.log
+*.pid
+*.swp
+*.swo
+*~
+
+# Operating system and editor metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/

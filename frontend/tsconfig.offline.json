@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@xyflow/react": ["./src/components/offline-flow.tsx"],
+      "@radix-ui/react-slot": ["./src/components/offline-primitives.tsx"],
+      "class-variance-authority": ["./src/components/offline-primitives.tsx"]
+    },
+    "jsx": "preserve"
+  }
+}
