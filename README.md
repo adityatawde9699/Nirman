@@ -25,11 +25,13 @@ Terminal 1:
 ```bash
 cd backend
 python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-uvicorn app.main:app --reload --env-file .env --host 0.0.0.0 --port 8000
+.venv/bin/python -m ensurepip --upgrade
+.venv/bin/python -m pip install -r requirements.txt
+test -f .env || cp .env.example .env
+.venv/bin/python -m uvicorn app.main:app --reload --env-file .env --host 0.0.0.0 --port 8000
 ```
+
+These commands use the virtual environment's Python explicitly; activation is optional. If `pip` reports `externally-managed-environment` or Uvicorn runs from `/usr/bin`, use the commands above instead of bare `pip` and `uvicorn`. Run environment creation before activating it, and do not recreate an environment while it is active. If environment creation reports that `ensurepip` is unavailable on Debian/Ubuntu, install the `python3-venv` package for your selected system Python and retry.
 
 The local default is SQLite so the demo starts without a database server. To use PostgreSQL locally, set `DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST:5432/nirman` in `backend/.env`. The same SQLAlchemy models and services support both databases.
 
